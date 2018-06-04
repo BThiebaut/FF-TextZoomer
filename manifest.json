@@ -1,0 +1,33 @@
+{
+
+    "manifest_version": 2,
+    "name": "TextZoomer",
+    "version": "1.0",
+  
+    "description": "Allow to zoom any text on page",
+    "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
+    "icons": {
+      "48": "icons/zoom.png"
+    },
+  
+    "permissions": [
+      "activeTab",
+      "<all_urls>",
+      "storage",
+      "tabs",
+      "webNavigation"
+    ],
+  
+    "browser_action": {
+      "default_icon": "icons/zoom.png",
+      "default_title": "TextZoomer",
+      "default_popup": "popup/conf_zoomer.html"
+    },
+
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "run_at": "document_start"
+      }
+    ]
+  }
